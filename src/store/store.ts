@@ -15,7 +15,6 @@ export default class Store{
     setAuth(bool: boolean) {
         this.isAuth = bool;
     }
-
     setUser(user:IUser){
         this.user = user;
     }
