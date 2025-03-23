@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.authForm{
+    display: flex;
+    flex-direction: column;
+}
+.authCont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.authCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 45vh;
+    height: 32vh;
+    margin: 30vh 0;
+    background-color: #E3E3E3;
+    font-family: 'Ubuntu', sans-serif;
+
+    border-radius: 17px;
+    box-shadow: -5px 6px 25px gray;
+}
+h2{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.questionAccount{
+    display: flex;
+    padding: 1.5vh 0;
+    color: #424242;
+}
+.navLink{
+    margin-left: 110px;
+}
