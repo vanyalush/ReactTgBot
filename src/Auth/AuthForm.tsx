@@ -14,17 +14,17 @@ const AuthForm: FC = () => {
             <Card className='authCard'>
                 <h2>Вход</h2>
                 <div className="authForm">
-                    <AuthInput
-                        type="email"
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                    <input
+                        onChange={e => setEmail(e.target.value)}
                         value={email}
-                        placeholder="email"
+                        type="text"
+                        placeholder='Email'
                     />
-                    <AuthInput
-                        type="password"
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+                    <input
+                        onChange={e => setPassword(e.target.value)}
                         value={password}
-                        placeholder="password"
+                        type="password"
+                        placeholder='Пароль'
                     />
                 </div>
                 <Row>
