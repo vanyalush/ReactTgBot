@@ -1,6 +1,6 @@
 import React, {FC, useContext, useEffect} from 'react';
 import './App.css';
-import AuthForm from "./components/AuthForm";
+import AuthForm from './Auth/AuthForm'
 import {Context} from "./index";
 import {observer} from "mobx-react-lite";
 
@@ -8,11 +8,11 @@ const App:FC = ()=> {
 
     const {store} = useContext(Context);
 
-    useEffect(()=>{
+    useEffect( () => {
         if (localStorage.getItem("token")){
             store.checkAuth()
         }
-    }, [])
+    }, [store])
 
     if(store.isLoading){
         return <div>Loading...</div>
@@ -20,7 +20,7 @@ const App:FC = ()=> {
 
     if(!store.isAuth){
         return(
-            <AuthForm />
+            <AuthForm/>
         )
     }
 
