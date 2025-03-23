@@ -11,3 +11,6 @@
     font-family: 'Ubuntu', sans-serif;
     color: #202020;
 }
+.myBtn:hover{
+    background-color: #78f865;
+}
