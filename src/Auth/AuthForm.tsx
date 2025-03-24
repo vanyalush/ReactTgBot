@@ -12,7 +12,7 @@ const AuthForm: FC = () => {
     return (
         <Container className='authCont'>
             <Card className='authCard'>
-                <h2>Вход</h2>
+                <h2>Регистрация</h2>
                 <div className="authForm">
                     <input className='authBtn'
                         onChange={e => setEmail(e.target.value)}
@@ -36,9 +36,13 @@ const AuthForm: FC = () => {
                         </div>
                     }
                 </Row>
+                <AuthButton onClick={() => store.login(email, password)}>
+                    Вход
+                </AuthButton>
                 <AuthButton onClick={() => store.registration(email, password)}>
                     Регистрация
                 </AuthButton>
+
             </Card>
         </Container>
 
