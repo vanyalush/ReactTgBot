@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {INTERFACE_ROUTE} from "../utils/consts";
 import './styles/NavBar.css'
 import 'boxicons'
 import {Offcanvas} from "react-bootstrap";
+import {Context} from "../index";
 
 const NavBar = ({ name, ...props }) => {
+    const {user} = useContext(Context);
     const [showMainMenu, setShowMainMenu] = useState(false);
     const [showProfileMenu, setShowProfileMenu] = useState(false);
 
@@ -48,7 +50,7 @@ const NavBar = ({ name, ...props }) => {
                                 <Offcanvas.Title>Настройки</Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body>
-                                <button onClick={() => store.logout()}>Выйти</button>
+                                <button onClick={() => user.logout()}>Выйти</button>
                             </Offcanvas.Body>
                         </Offcanvas>
                     </div>
