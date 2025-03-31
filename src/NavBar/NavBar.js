@@ -48,7 +48,7 @@ const NavBar = ({ name, ...props }) => {
                                 <Offcanvas.Title>Настройки</Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body>
-                                someone
+                                <button onClick={() => store.logout()}>Выйти</button>
                             </Offcanvas.Body>
                         </Offcanvas>
                     </div>
