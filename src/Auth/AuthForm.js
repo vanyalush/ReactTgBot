@@ -2,18 +2,20 @@ import React, {useContext, useState} from 'react';
 import {Context} from '../index'
 import {observer} from "mobx-react-lite";
 import './AuthComponents/styles/AuthForm.css'
-import {Card, Container, NavLink, Row, Form} from "react-bootstrap";
+import {Container, Row, Form} from "react-bootstrap";
 import AuthButton from "./AuthComponents/UI/Button/AuthButton";
 import {INTERFACE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE} from "../utils/consts";
-import {useLocation, useNavigate} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const AuthFormLogin = observer(() => {
+const AuthForm = observer(() => {
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE
     const history = useNavigate()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const {user} = useContext(Context);
+    const [error, setError] = useState(null);
     const click = async () => {
         try {
             let data;
@@ -22,43 +24,53 @@ const AuthFormLogin = observer(() => {
             } else {
                 data = await user.registration(email, password);
             }
-            user.setUser(user.user)
+            user.setUser(data.user)
             user.setAuth(true)
             history(INTERFACE_ROUTE)
         } catch (e) {
-            alert(e.response.data.message)
+            const errorMessage = e.response?.data?.message || "Произошла ошибка";
+            setError(errorMessage);
         }
     }
     return (
         <Container className='authCont'>
-            <Card className="authCard">
-                <h2>Вход</h2>
+            <div className="authCard">
+                <h2>{isLogin ? 'Вход' : "Регистрация"}</h2>
+                {error && <div className="auth-error">{error}</div>}
                 <div className="authForm">
-                    <Form.Control className='authBtn'
-                           onChange={e => setEmail(e.target.value)}
-                           value={email}
-                           type="text"
-                           placeholder='Email'
+                    <input
+                        className='authBtn'
+                        onChange={e => setEmail(e.target.value)}
+                        value={email}
+                        type="text"
+                        placeholder='Email'
                     />
-                    <Form.Control className='authBtn'
-                           onChange={e => setPassword(e.target.value)}
-                           value={password}
-                           type="password"
-                           placeholder='Пароль'
+                    <input
+                        className='authBtn'
+                        onChange={e => setPassword(e.target.value)}
+                        value={password}
+                        type="password"
+                        placeholder='Пароль'
                     />
                 </div>
                 <Row>
-                    <div className='questionAccount'>
-                        Нет аккаунта?<NavLink className='navLink' to={REGISTRATION_ROUTE}>Зарегестрируйся!</NavLink>
-                    </div>
+                    {isLogin ?
+                        <div className='questionAccount'>
+                            Нет аккаунта?<Link className='navLink' to={REGISTRATION_ROUTE}>Зарегестрируйся!</Link>
+                        </div>
+                        :
+                        <div className='questionAccount'>
+                            Есть аккаунт?<Link className='navLink' to={LOGIN_ROUTE}>Войди!</Link>
+                        </div>
+                    }
                 </Row>
                 <AuthButton onClick={click}>
-                    Войти
+                    {isLogin ? 'Войти' : 'Регистрация'}
                 </AuthButton>
-            </Card>
-        </Container>
 
+            </div>
+        </Container>
     );
 });
 
-export default AuthFormLogin;
+export default AuthForm;

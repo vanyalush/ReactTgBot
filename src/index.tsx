@@ -1,27 +1,26 @@
 import React, {createContext} from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import Store from "./store/store";
+import UserStore from "./store/UserStore";
 import './index.css'
 
 interface State{
-    store:Store;
+    user:UserStore;
 }
 
-const store = new Store();
+const user = new UserStore();
 
 export const Context = createContext<State>({
-    store,
+    user,
 })
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-
-  <React.StrictMode>
-      <Context.Provider value={{store}}>
-          <App />
-      </Context.Provider>
-  </React.StrictMode>
+    <React.StrictMode>
+        <Context.Provider value={{user}}>
+            <App/>
+        </Context.Provider>
+    </React.StrictMode>
 );
