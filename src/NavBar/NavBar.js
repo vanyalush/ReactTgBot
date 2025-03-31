@@ -1,10 +1,11 @@
 import React, {useContext, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {INTERFACE_ROUTE} from "../utils/consts";
+import {INTERFACE_ROUTE, LOGIN_ROUTE} from "../utils/consts";
 import './styles/NavBar.css'
 import 'boxicons'
 import {Offcanvas} from "react-bootstrap";
 import {Context} from "../index";
+import {Link} from "react-router-dom";
 
 const NavBar = ({ name, ...props }) => {
     const {user} = useContext(Context);
@@ -50,7 +51,7 @@ const NavBar = ({ name, ...props }) => {
                                 <Offcanvas.Title>Настройки</Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body>
-                                <button onClick={() => user.logout()}>Выйти</button>
+                                <Link to={LOGIN_ROUTE} onClick={() => user.logout()}>Выйти</Link>
                             </Offcanvas.Body>
                         </Offcanvas>
                     </div>
