@@ -1,10 +1,11 @@
 import {Context} from "./index";
 import {observer} from "mobx-react-lite";
-import React, {FC, useContext, useEffect} from "react";
+import React, { useContext, useEffect} from "react";
 import {BrowserRouter} from "react-router-dom";
 import AppRouter from "./components/AppRouter";
+import {Spinner} from "react-bootstrap";
 
-const App:FC = ()=> {
+const App = () => {
 
     const {user} = useContext(Context);
 
@@ -15,7 +16,10 @@ const App:FC = ()=> {
     }, [user])
 
     if(user.isLoading){
-        return <div>Loading...</div>
+        return
+        <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </Spinner>
     }
 
     return (
@@ -25,4 +29,4 @@ const App:FC = ()=> {
     );
 }
 
-export default observer(App);
+export default App;

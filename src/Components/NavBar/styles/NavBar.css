@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    background-color: #484848;
+    color: white;
+}
+.NavContainer{
+    display: flex;
+    height: 5vh;
+    background-color: #484848;
+}
+.interface{
+    display: flex;
+    flex-direction: row;
+    margin-left: 37vh;
+    background-color: #484848;
+}
+.menu{
+    background-color: transparent;
+}
+.mainTransferBtn{
+    scale: 1.8;
+    margin-top: 7px;
+    display: flex;
+
+    background-color: #484848;
+    border: none;
+
+    justify-content: center;
+    align-items: center;
+}
+.mainTransferBtn:hover{
+    scale: 1.7;
+}
+.transfer{
+    display: flex;
+    scale: 1.45;
+    padding: 0 12px;
+    justify-content: center;
+    background-color: transparent;
+    align-items: center;
+    cursor: pointer;
+}
+.transfer:hover{
+    scale: 1.4;
+}
+.offcanvas{
+    max-width: 28vh;
+    color: white;
+    background-color: #555555;
+}
+.offcanvasHeader{
+    background-color: #555555;
+    height: 30px;
+}
+.offcanvasBody{
+    background-color: #555555;
+}
+.offcanvasTitle{
+    display: flex;
+    flex-direction: row;
+    background-color: #555555;
+    padding: 13px 0;
+    border: none;
+}
+.offcanvasTitle:hover{
+    text-decoration: underline;
+    scale: 0.995;
+}
+.offcanvasLink{
+    display: flex;
+    color: white;
+    font-size: 17px;
+    margin-left: 10px;
+    text-decoration: none;
+    background-color: #555555;
+
+}
+.titleIcon{
+    background-color: #555555;
+}
