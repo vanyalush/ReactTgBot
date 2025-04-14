@@ -7,7 +7,7 @@ import { IUser } from "../models/IUser";
 
 export default class UserStore {
     user= {} as IUser;
-    isAuth = true;
+    isAuth = false;
     isLoading = false;
 
     constructor() {

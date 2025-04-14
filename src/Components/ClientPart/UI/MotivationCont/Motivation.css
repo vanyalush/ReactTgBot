@@ -1,0 +1,48 @@
+.motivation{
+    display: flex;
+    margin-top: 3vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.motivCont{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: #676767;
+    margin-top: 2vh;
+    border-radius: 17px;
+    width: 55vh;
+    height: 110px;
+}
+.motivationTitle{
+    margin-bottom: 10px;
+}
+.quote{
+    font-size: 17px;
+    margin-top: 18px;
+    padding: 0 9px;
+    background-color: transparent;
+}
+.author{
+    font-size: 14px;
+    margin-left: 12px;
+    margin-bottom: 5px;
+    color: #700F1A;
+    background-color:transparent;
+}
+.motivRow{
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+}
+.refreshBtn{
+    margin-left: 270px;
+    margin-top: 10px;
+    background-color: #676767;
+    width: 20px;
+    height: 20px;
+}
+.iconRefresh{
+    background-color: #676767;
+}

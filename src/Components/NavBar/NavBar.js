@@ -1,10 +1,10 @@
 import React, {useContext, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {INTERFACE_ROUTE, LOGIN_ROUTE} from "../utils/consts";
+import {INTERFACE_ROUTE, LOGIN_ROUTE} from "../../utils/consts";
 import './styles/NavBar.css'
 import 'boxicons'
 import {Offcanvas} from "react-bootstrap";
-import {Context} from "../index";
+import {Context} from "../../index";
 import {Link} from "react-router-dom";
 
 const NavBar = ({ name, ...props }) => {

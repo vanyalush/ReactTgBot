@@ -1,0 +1,19 @@
+.difficulties{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+.dropdown{
+    padding: 7px 7px;
+    background-color: #D6D6D6;
+}
+.dropMenu{
+    background-color: #5F9058;
+}
+.dropItemTransfer{
+    background-color: #5F9058;
+    color: white;
+    text-decoration: none;
+}

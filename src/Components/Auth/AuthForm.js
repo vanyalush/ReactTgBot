@@ -1,10 +1,10 @@
 import React, {useContext, useState} from 'react';
-import {Context} from '../index'
+import {Context} from '../../index'
 import {observer} from "mobx-react-lite";
 import './AuthComponents/styles/AuthForm.css'
-import {Container, Row, Form} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import AuthButton from "./AuthComponents/UI/Button/AuthButton";
-import {INTERFACE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE} from "../utils/consts";
+import {INTERFACE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE} from "../../utils/consts";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -36,24 +36,24 @@ const AuthForm = observer(() => {
         <Container className='authCont'>
             <div className="authCard">
                 <h2>{isLogin ? 'Вход' : "Регистрация"}</h2>
-                {error && <div className="auth-error">{error}</div>}
                 <div className="authForm">
                     <input
-                        className='authBtn'
+                        className='authInp'
                         onChange={e => setEmail(e.target.value)}
                         value={email}
                         type="text"
                         placeholder='Email'
                     />
                     <input
-                        className='authBtn'
+                        className='authInp'
                         onChange={e => setPassword(e.target.value)}
                         value={password}
                         type="password"
                         placeholder='Пароль'
                     />
                 </div>
-                <Row>
+                {error && <div className="auth-error">{error}</div>}
+                <div className='authQuestions'>
                     {isLogin ?
                         <div className='questionAccount'>
                             Нет аккаунта?<Link className='navLink' to={REGISTRATION_ROUTE}>Зарегестрируйся!</Link>
@@ -63,7 +63,7 @@ const AuthForm = observer(() => {
                             Есть аккаунт?<Link className='navLink' to={LOGIN_ROUTE}>Войди!</Link>
                         </div>
                     }
-                </Row>
+                </div>
                 <AuthButton onClick={click}>
                     {isLogin ? 'Войти' : 'Регистрация'}
                 </AuthButton>

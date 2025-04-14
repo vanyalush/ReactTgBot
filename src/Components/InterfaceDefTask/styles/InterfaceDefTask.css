@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.uploadCont{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 20vh;
+    margin-top: 40px;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
+.uploadBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 5px;
+    background: #5F1016;
+}
+.uploadIcon{
+    background: #5F1016;
+    scale:1.4;
+}

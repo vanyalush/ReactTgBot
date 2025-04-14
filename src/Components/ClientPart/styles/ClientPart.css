@@ -16,52 +16,30 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-size: 24px;
 }
-.tasks{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 20px;
-}
-.task{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 7vh;
-    height: 7vh;
-    font-size: 20px;
-    margin: 0 6.6px;
-    border-radius: 12px;
-    box-shadow: -3px 4px 15px gray;
-    background-color: #5F9058;
-}
-
 .defaultQues{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 55vh;
-    height: 25vh;
-    margin-top: 4vh;
+    height: 15vh;
+    margin-top: 4.4vh;
     background-color: #D6D6D6;
-    border: 2px solid black;
     border-radius: 25px;
 }
 h3{
     font-size: 19px;
+    background-color: transparent;
 }
 .textDefQues{
+    margin-top: 7px;
     display: flex;
     flex-direction: row;
+    background-color: transparent;
 }
-.difficulties{
-    display: flex;
-    flex-direction: row;
-}
-.dropdown{
-    padding: 7px 7px;
-}
-.dropMenu{
-    background-color: #5F9058;
+.iconDiff{
+    background-color: transparent;
+    margin-right: 3px;
 }

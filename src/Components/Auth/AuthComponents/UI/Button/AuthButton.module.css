@@ -4,13 +4,13 @@
     width: 17vh;
     padding: 3px;
     margin-top: 10px;
-    background-color: #96FF89;
-    border: 1px solid #1EF867;
+    background-color: #700F1A;
+    border: 1px solid #5F1016;
     border-radius: 10px;
     font-size: 15px;
     font-family: 'Ubuntu', sans-serif;
-    color: #202020;
+    color: white;
 }
 .myBtn:hover{
-    background-color: #78f865;
+    background-color: #87111e;
 }
